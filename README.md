@@ -512,8 +512,6 @@ Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus co
 
 Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
-⚠ Lembre-se que garantir que todas as _issues_ comentadas pelo **Lint** estão resolvidas! ⚠
-
 ---
 
 ### Revisando um pull request
