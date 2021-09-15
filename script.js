@@ -55,7 +55,7 @@ function validationLetter(str) {
     }
 }
 
-//Criando uma Escuta para Botaão Gerara Carta
+//Criando uma Escuta Função de Validação
 buttonGenerate.addEventListener("click", function (evt) {
     validationLetter(letterContent);
 });
