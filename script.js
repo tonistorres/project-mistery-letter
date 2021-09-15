@@ -10,6 +10,8 @@
 //************************************************************************************ */
 
 let buttonGenerate = document.getElementById('criar-carta');
+let letterContent = document.getElementById('carta-texto');
+let generatedLetter;
 
 window.onload = function () {
 
@@ -28,6 +30,8 @@ function generateLetter() {
         containerFather.appendChild(createSpan);
     }
     popularSpan();
+
+
 }
 
 function popularSpan() {
@@ -35,10 +39,28 @@ function popularSpan() {
     let letterContent = document.getElementById('carta-texto');
     let resultLetterContent = letterContent.value.split(" ");
     for (let i = 0; i < resultLetterContent.length; i++) {
-        captureContentSpan[i].innerText=resultLetterContent[i];
+        captureContentSpan[i].innerText = resultLetterContent[i];
     }
 }
 
 
+//Função de validação
+function validationLetter(str) {
+    let input = document.getElementById('carta-texto');
+    if (str.value === ""|| str.value>=1!==" ") {
+        input.innerText = "Por favor, digite o conteúdo da carta.";
+        input.focus();
+        input.style.background = "yellow";
+        document.getElementById('carta-gerada').innerText="Por favor, digite o conteúdo da carta.";
+    }
+}
+
 //Criando uma Escuta para Botaão Gerara Carta
-buttonGenerate.addEventListener("click", generateLetter);
+buttonGenerate.addEventListener("click", function (evt) {
+    validationLetter(letterContent);
+});
+
+
+
+
+
