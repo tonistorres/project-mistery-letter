@@ -1,3 +1,5 @@
+/*Grupo de Estilo*/
+
 .newspaper {
     background-color: rgb(250, 235, 215);
     font-family: Times New Roman;
@@ -19,6 +21,9 @@
     font-weight: 900;
 }
 
+
+/*Grupo de Tamanho*/
+
 .medium {
     font-size: 20px;
     padding: 8px;
@@ -34,6 +39,9 @@
     padding: 15px;
 }
 
+
+/*Gupo de Rotação*/
+
 .rotateleft {
     transform: matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0);
 }
@@ -41,6 +49,9 @@
 .rotateright {
     transform: matrix(0.996195, 0.0871557, -0.0871557, 0.996195, 0, 0);
 }
+
+
+/*Grupo de Inclinação*/
 
 .skewleft {
     transform: matrix(1, 0, 0.176327, 1, 0, 0);

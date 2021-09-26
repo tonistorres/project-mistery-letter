@@ -2,6 +2,7 @@
 // Repositorio Descritivo: https: //github.com/tryber/sd-016-b-project-mistery-letter
 // FONTE PESQUISA
 // Implementações: Tonis Torres
+// Contribuição:Gabriel Pinheiro
 
 const buttonGenerate = document.querySelector('#criar-carta');
 const letterContent = document.querySelector('#carta-texto');
@@ -33,15 +34,15 @@ function validationLetter(str) {
     //Remova os espaços em branco de ambos os lados de uma string:
     const filterString = str.value.trim();
     if ((filterString === "") || (filterString === " ")) {
-        estilizaCriaUmaBarraInfo();
+        inforUser();
     } else {
-        criarContainerPhrases(filterString);
+        createrContainerPhrases(filterString);
+
     }
 
 }
 
-function estilizaCriaUmaBarraInfo() {
-    alert('função estilizar')
+function inforUser() {
     let response = document.querySelector('#carta-gerada');
     let input = document.querySelector('#carta-texto');
     input.focus();
@@ -52,7 +53,7 @@ function estilizaCriaUmaBarraInfo() {
 }
 
 
-function criarContainerPhrases(str) {
+function createrContainerPhrases(str) {
     //Documentação:https://www.w3schools.com/jsref/jsref_trim_string.asp
     //Remova os espaços em branco de ambos os lados de uma string:
     let input = document.querySelector('#carta-texto');
@@ -61,11 +62,22 @@ function criarContainerPhrases(str) {
     containerPhrasesGenerated.innerHTML = "";
     for (let i = 0; i < phrasesArray.length; i += 1) {
         let createSpan = document.createElement('span');
+        const classGroupStyle = ['newspaper', 'magazine1', 'magazine2'];
+        const classGroupSize = ['medium', 'big', 'reallybig'];
+        const classGroupRatiton = ['rotateleft', 'rotateright'];
+        const classGroupInclination = ['skewleft', 'skewright'];
+        //https://www.w3schools.com/jsref/jsref_random.asp
+        //https://stackoverflow.com/questions/33731154/add-random-css-classes-to-random-elements-with-javascript-jquery
+        let randomClassGroupStyle = classGroupStyle[Math.floor(Math.random() * 3)];
+        let randomclassGroupSize = classGroupSize[Math.floor(Math.random() * 3)];
+        let randomClassGroupRatation = classGroupRatiton[Math.floor(Math.random() * 2)];
+        let randomClassGroupIclination = classGroupInclination[Math.floor(Math.random() * 2)];
         createSpan.innerText = phrasesArray[i];
+        createSpan.classList.add(randomClassGroupStyle, randomclassGroupSize, randomClassGroupRatation, randomClassGroupIclination);
         containerPhrasesGenerated.appendChild(createSpan);
+
     }
     input.style.background = "white";
-
 }
 
 buttonGenerate.addEventListener("click", (evt) => {
