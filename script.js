@@ -37,6 +37,7 @@ function validationLetter(str) {
         inforUser();
     } else {
         createrContainerPhrases(filterString);
+        countPhrases();
 
     }
 
@@ -74,6 +75,7 @@ function createrContainerPhrases(str) {
         let randomClassGroupIclination = classGroupInclination[Math.floor(Math.random() * 2)];
         createSpan.innerText = phrasesArray[i];
         createSpan.classList.add(randomClassGroupStyle, randomclassGroupSize, randomClassGroupRatation, randomClassGroupIclination);
+        createSpan.addEventListener("click", styleChange);
         containerPhrasesGenerated.appendChild(createSpan);
 
     }
@@ -85,3 +87,32 @@ buttonGenerate.addEventListener("click", (evt) => {
     evt.preventDefault();
     validationLetter(letterContent);
 });
+
+
+function styleChange(evt) {
+    const classGroupStyle = ['newspaper', 'magazine1', 'magazine2'];
+    const classGroupSize = ['medium', 'big', 'reallybig'];
+    const classGroupRatiton = ['rotateleft', 'rotateright'];
+    const classGroupInclination = ['skewleft', 'skewright'];
+    //https://www.w3schools.com/jsref/jsref_random.asp
+    //https://stackoverflow.com/questions/33731154/add-random-css-classes-to-random-elements-with-javascript-jquery
+    let randomClassGroupStyle = classGroupStyle[Math.floor(Math.random() * 3)];
+    let randomclassGroupSize = classGroupSize[Math.floor(Math.random() * 3)];
+    let randomClassGroupRatation = classGroupRatiton[Math.floor(Math.random() * 2)];
+    let randomClassGroupIclination = classGroupInclination[Math.floor(Math.random() * 2)];
+    evt.currentTarget.classList.add(randomClassGroupStyle, randomclassGroupSize, randomClassGroupRatation, randomClassGroupIclination);
+
+}
+
+function countPhrases() {
+    let counter = document.querySelector('#carta-contador');
+    const filhas = document.querySelectorAll('span');
+    // eslint-disable-next-line no-unused-vars
+    let contador = 0;
+    for (let i = 0; i < filhas.length; i++) {
+        console.log(filhas[i].innerText);
+        contador += 1;
+
+    }
+    counter.innerText = contador.toString();
+}
