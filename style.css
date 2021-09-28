@@ -1,5 +1,3 @@
-/*Grupo de Estilo*/
-
 .newspaper {
     background-color: antiquewhite;
     font-family: Times New Roman;
@@ -7,8 +5,8 @@
 }
 
 .magazine1 {
-    background-color: rgb(0, 128, 128);
-    color: rgb(255, 255, 255);
+    background-color: teal;
+    color: white;
     font-family: Verdana;
     font-weight: 900;
     text-transform: uppercase;
@@ -16,7 +14,7 @@
 
 .magazine2 {
     background-image: url("images/pink-pattern.png");
-    color: rgb(255, 0, 255);
+    color: fuchsia;
     font-family: Verdana;
     font-weight: 900;
 }
